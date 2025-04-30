@@ -24,7 +24,40 @@ This repository provides a modular C++/CUDA neural network framework for researc
 ## IMPORTANT:
 Datasets must be placed inside a /Dataset folder in root dir.
 
+### Dataset Directory Structure
 
+The framework expects datasets to be organized within a `Dataset` directory located at the root of the project. Here's the expected structure for common datasets:
+
+```
+.
+├── Dataset/
+│   ├── MNIST/
+│   │   ├── train-images-idx3-ubyte
+│   │   ├── train-labels-idx1-ubyte
+│   │   ├── t10k-images-idx3-ubyte
+│   │   └── t10k-labels-idx1-ubyte
+│   ├── CIFAR-10/
+│   │   ├── cifar-10-batches-bin/
+│   │   │   ├── data_batch_1.bin
+│   │   │   ├── data_batch_2.bin
+│   │   │   ├── data_batch_3.bin
+│   │   │   ├── data_batch_4.bin
+│   │   │   ├── data_batch_5.bin
+│   │   │   ├── test_batch.bin
+│   │   │   └── batches.meta.txt
+│   │   └── cifar-10-python.tar.gz # Optional, if using Python version loader
+│   ├── BostonHousing/
+│   │   └── housing.csv
+│   ├── CaliforniaHousing/
+│   │   └── california_housing.csv
+│   └── ... # Other datasets
+├── src/
+├── include/
+├── Makefile
+└── README.md
+```
+
+Ensure your dataset files are placed correctly within the `Dataset` folder before running any training or evaluation scripts.
 
 ### 1. Build the Project
 
